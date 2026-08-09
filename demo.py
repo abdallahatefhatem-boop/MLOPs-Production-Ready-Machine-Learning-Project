@@ -13,3 +13,4 @@ except Exception as e:
     
     logging.error("Error occurred during computation")
     raise USvisaException(e, sys)
+
