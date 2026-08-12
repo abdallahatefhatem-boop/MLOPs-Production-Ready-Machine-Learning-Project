@@ -1,0 +1,98 @@
+Metadata-Version: 2.4
+Name: mlops
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+
+# US Visa Approval Prediction - MLOps Project
+
+## 📌 Project Overview
+This project is an end-to-end Machine Learning Operations (MLOps) pipeline designed to predict US Visa approvals. It is built with a focus on production-readiness, scalability, and maintainability. The system takes applicant data and predicts whether the visa application will be approved or denied, utilizing a modular architecture for data ingestion, validation, transformation, model training, and evaluation.
+
+## 🚀 Key Features
+* **Modular Pipeline Architecture:** Clear separation of concerns (Ingestion, Validation, Transformation, Training, Evaluation).
+* **Data Drift Detection:** Integrated with `Evidently` to monitor incoming data distributions and detect drift in production.
+* **Database Integration:** Connects to **MongoDB** for seamless data extraction and ingestion.
+* **Custom Logging & Exception Handling:** Comprehensive mechanisms to trace executions and catch precise errors in all modules.
+* **FastAPI Ready:** Dependencies configured for deploying the model as a scalable REST API.
+* **Cloud Storage:** Integration with AWS S3 (`boto3`) for model/artifact storage and retrieval.
+
+## 🛠️ Technology Stack
+* **Language:** Python 3.8+
+* **Machine Learning:** Scikit-Learn, XGBoost, CatBoost, Imbalanced-Learn
+* **Data Validation/Drift:** Evidently AI
+* **Database:** MongoDB (`pymongo`)
+* **Web Framework:** FastAPI, Uvicorn
+* **Cloud & MLOps:** AWS (boto3), dill, PyYAML
+
+## 📂 Project Structure
+```text
+.
+├── config/                 # Configuration schemas and settings
+├── logs/                   # System execution logs
+├── notebook/               # Jupyter notebooks for EDA and experimentation
+├── us_visa/                # Core Package
+│   ├── components/         # Pipeline components (Ingestion, Validation, etc.)
+│   ├── configuration/      # Connections like MongoDB, AWS
+│   ├── data_access/        # Scripts fetching data from MongoDB
+│   ├── entity/             # Data class definitions for configuration and artifacts
+│   ├── exception/          # Custom exception handling code
+│   ├── logger/             # Custom logging mechanism
+│   └── pipeline/           # Training and Prediction Pipelines
+├── demo.py                 # Script to test and run the training pipeline
+├── app.py                  # Web application entry point (FastAPI)
+├── requirements.txt        # Python dependencies
+├── setup.py                # Package setup file
+└── template.py             # Script to generate project boilerplate structure
+```
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd mlops
+   ```
+
+2. **Create a virtual environment:**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Environment Variables:**
+   Ensure you set up the necessary environment variables for your MongoDB connection and AWS credentials:
+   ```bash
+   export MONGODB_URL="your-mongodb-connection-string"
+   export AWS_ACCESS_KEY_ID="your-access-key"
+   export AWS_SECRET_ACCESS_KEY="your-secret-key"
+   export AWS_DEFAULT_REGION="your-region"
+   ```
+
+## 🏃‍♂️ How to Run
+
+### Run the Training Pipeline
+To execute the modular pipeline (data ingestion, validation, etc.) you can use the `demo.py` script:
+```bash
+python demo.py
+```
+This will trigger the `TrainPipeline` from the `us_visa` package. Check the `logs/` directory to track execution progress.
+
+### Start the API Server (Coming Soon)
+To serve the trained model via FastAPI:
+```bash
+python app.py
+# Or run with uvicorn directly
+uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+```
+
+## 📊 MLOps Integration
+
+1. **Data Validation (`evidently`)**: The validation component generates reports on the data structure, identifying missing values, column mismatches, and data drift before passing it downstream.
+2. **Experiment Tracking & Deployment**: Through the modular pipeline, the best models are saved as pickle files using `dill` and can be versioned and pushed to an S3 bucket for deployment.
