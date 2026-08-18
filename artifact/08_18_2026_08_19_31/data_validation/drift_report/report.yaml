@@ -1,0 +1,106 @@
+metrics:
+- config:
+    drift_share: 0.5
+    type: evidently:metric_v2:DriftedColumnsCount
+  id: 15e89f895b482f9b84ba7274ed18a106
+  metric_name: DriftedColumnsCount(drift_share=0.5)
+  value:
+    count: 0.0
+    share: 0.0
+- config:
+    column: no_of_employees
+    method: Wasserstein distance (normed)
+    threshold: 0.1
+    type: evidently:metric_v2:ValueDrift
+  id: 44ed95692690fdd0122a65b138e9060b
+  metric_name: ValueDrift(column=no_of_employees,method=Wasserstein distance (normed),threshold=0.1)
+  value: 0.015422349581580407
+- config:
+    column: yr_of_estab
+    method: Wasserstein distance (normed)
+    threshold: 0.1
+    type: evidently:metric_v2:ValueDrift
+  id: a1076b7f552ed954d7a0f7b5e3389aed
+  metric_name: ValueDrift(column=yr_of_estab,method=Wasserstein distance (normed),threshold=0.1)
+  value: 0.027356714778994852
+- config:
+    column: prevailing_wage
+    method: Wasserstein distance (normed)
+    threshold: 0.1
+    type: evidently:metric_v2:ValueDrift
+  id: 3f76acd90ddbe278fb63f5ef3169f600
+  metric_name: ValueDrift(column=prevailing_wage,method=Wasserstein distance (normed),threshold=0.1)
+  value: 0.012968546945725612
+- config:
+    column: continent
+    method: Jensen-Shannon distance
+    threshold: 0.1
+    type: evidently:metric_v2:ValueDrift
+  id: 331f8786a2cc5d42160cb3239d26369e
+  metric_name: ValueDrift(column=continent,method=Jensen-Shannon distance,threshold=0.1)
+  value: 0.018259989008206703
+- config:
+    column: education_of_employee
+    method: Jensen-Shannon distance
+    threshold: 0.1
+    type: evidently:metric_v2:ValueDrift
+  id: 462f7e3097be07eeb3f21ae6d3142f81
+  metric_name: ValueDrift(column=education_of_employee,method=Jensen-Shannon distance,threshold=0.1)
+  value: 0.009403039059279911
+- config:
+    column: has_job_experience
+    method: Jensen-Shannon distance
+    threshold: 0.1
+    type: evidently:metric_v2:ValueDrift
+  id: 7f345702abe4aaa71a56794154694dd5
+  metric_name: ValueDrift(column=has_job_experience,method=Jensen-Shannon distance,threshold=0.1)
+  value: 0.0008086055636902439
+- config:
+    column: requires_job_training
+    method: Jensen-Shannon distance
+    threshold: 0.1
+    type: evidently:metric_v2:ValueDrift
+  id: cfd219a499d8abe9685c9fea4f9d0abe
+  metric_name: ValueDrift(column=requires_job_training,method=Jensen-Shannon distance,threshold=0.1)
+  value: 0.00985015851990718
+- config:
+    column: region_of_employment
+    method: Jensen-Shannon distance
+    threshold: 0.1
+    type: evidently:metric_v2:ValueDrift
+  id: fbfc3391582473821b92c93e972d3db4
+  metric_name: ValueDrift(column=region_of_employment,method=Jensen-Shannon distance,threshold=0.1)
+  value: 0.013371335197933583
+- config:
+    column: unit_of_wage
+    method: Jensen-Shannon distance
+    threshold: 0.1
+    type: evidently:metric_v2:ValueDrift
+  id: c29a272390c6fe63a2b4e6762abe77d5
+  metric_name: ValueDrift(column=unit_of_wage,method=Jensen-Shannon distance,threshold=0.1)
+  value: 0.012698144707665665
+- config:
+    column: full_time_position
+    method: Jensen-Shannon distance
+    threshold: 0.1
+    type: evidently:metric_v2:ValueDrift
+  id: b0351fb71ee2c17e6fdfa607c6445647
+  metric_name: ValueDrift(column=full_time_position,method=Jensen-Shannon distance,threshold=0.1)
+  value: 0.00045007921363988664
+- config:
+    column: case_status
+    method: Jensen-Shannon distance
+    threshold: 0.1
+    type: evidently:metric_v2:ValueDrift
+  id: 4a0f71cb37dc97fef945236f625bfaa8
+  metric_name: ValueDrift(column=case_status,method=Jensen-Shannon distance,threshold=0.1)
+  value: 0.0002945951264679122
+- config:
+    column: case_id
+    method: Absolute text content drift
+    threshold: 0.55
+    type: evidently:metric_v2:ValueDrift
+  id: 32e9fb9a329ebaf6ac32bf41519d712f
+  metric_name: ValueDrift(column=case_id,method=Absolute text content drift,threshold=0.55)
+  value: 0.5
+tests: []

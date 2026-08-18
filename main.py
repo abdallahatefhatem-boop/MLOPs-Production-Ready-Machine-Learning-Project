@@ -1,6 +1,6 @@
-def main():
-    print("Hello from mlops!")
+# # def main():
+# #     print("Hello from mlops!")
 
 
-if __name__ == "__main__":
-    main()
+# # if __name__ == "__main__":
+#     main()

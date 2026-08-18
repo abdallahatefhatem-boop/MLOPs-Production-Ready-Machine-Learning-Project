@@ -1,0 +1,5 @@
+[ 2026-08-18 08:31:51,834 ] asyncio - DEBUG - Using selector: EpollSelector
+[ 2026-08-18 08:33:26,092 ] root - INFO - Entered get_usvisa_data_as_dict method as USvisaData class
+[ 2026-08-18 08:33:26,093 ] root - INFO - Created usvisa data dict
+[ 2026-08-18 08:33:26,093 ] root - INFO - Exited get_usvisa_data_as_dict method as USvisaData class
+[ 2026-08-18 08:33:26,105 ] root - INFO - Entered predict method of USvisaClassifier class
